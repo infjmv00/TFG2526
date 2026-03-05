@@ -40,6 +40,6 @@ public class Empresa {
     private Integer telefono_empresa;
     private String correo_electronico;
     private boolean activo;
-    
+    private String prueba;
 
 }
