@@ -4,10 +4,16 @@
  */
 package repository;
 
+import entity.Empresa;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author jmvm_
  */
-public interface EmpresaRepository {
+
+public interface EmpresaRepository extends JpaRepository<Empresa, Long> {
+    
     
 }
