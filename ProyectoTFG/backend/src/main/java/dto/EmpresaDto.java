@@ -19,11 +19,11 @@ import lombok.Setter;
 @AllArgsConstructor
 public class EmpresaDto {
     private Long id;
-    private String cif_empresa;
+    private String CifEmpresa;
     private String nombre_empresa;
     private String direccion_empresa;
     private Integer telefono_empresa;
-    private String correo_Electronico;
+    private String correoElectronico;
     private boolean esActivo;
     
 }

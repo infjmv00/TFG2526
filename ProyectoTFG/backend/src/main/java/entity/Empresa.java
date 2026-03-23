@@ -37,7 +37,7 @@ public class Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name="CIF_Empresa")
-    private String Cif_Empresa;
+    private String CifEmpresa;
      @Column (name="nombre_empresa")
     private String nombre_empresa;
      @Column (name="direccion_empresa")
@@ -45,7 +45,7 @@ public class Empresa {
      @Column (name="Telefonoprov")
     private Integer telefono_empresa;
      @Column (name="e_mail", nullable=false, unique=true )
-    private String correo_electronico;
+    private String correoElectronico;
      @Column (name="activoEmpresa")
      private boolean activo;
   

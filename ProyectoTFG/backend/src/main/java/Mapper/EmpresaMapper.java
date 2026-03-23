@@ -16,11 +16,11 @@ public class EmpresaMapper {
         
         return new EmpresaDto(
                 empresa.getId(),
-                empresa.getCif_Empresa(),
+                empresa.getCifEmpresa(),
                 empresa.getNombre_empresa(),
                 empresa.getDireccion_empresa(),
                 empresa.getTelefono_empresa(),
-                empresa.getCorreo_electronico(),
+                empresa.getCorreoElectronico(),
                 empresa.isActivo()
                
         );
@@ -29,11 +29,11 @@ public class EmpresaMapper {
         
         return new Empresa(
                 empresaDto.getId(),
-                empresaDto.getCif_empresa(),
+                empresaDto.getCifEmpresa(),
                 empresaDto.getNombre_empresa(),
                 empresaDto.getDireccion_empresa(),
                 empresaDto.getTelefono_empresa(),
-                empresaDto.getCorreo_Electronico(),
+                empresaDto.getCorreoElectronico(),
                 empresaDto.isEsActivo()
         );
     }
