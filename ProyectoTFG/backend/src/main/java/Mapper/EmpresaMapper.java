@@ -15,7 +15,7 @@ public class EmpresaMapper {
     public static EmpresaDto mapToEmpresaDto(Empresa empresa){
         
         return new EmpresaDto(
-                empresa.getId(),
+                
                 empresa.getCifEmpresa(),
                 empresa.getNombre_empresa(),
                 empresa.getDireccion_empresa(),
@@ -28,7 +28,7 @@ public class EmpresaMapper {
     public static Empresa mapToEmpresa(EmpresaDto empresaDto){
         
         return new Empresa(
-                empresaDto.getId(),
+                
                 empresaDto.getCifEmpresa(),
                 empresaDto.getNombre_empresa(),
                 empresaDto.getDireccion_empresa(),
