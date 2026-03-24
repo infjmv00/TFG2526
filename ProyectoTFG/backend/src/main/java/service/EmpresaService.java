@@ -5,6 +5,7 @@
 package service;
 
 import dto.EmpresaDto;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,5 +16,9 @@ import org.springframework.stereotype.Service;
 public interface EmpresaService {
     
     EmpresaDto createEmpresa(EmpresaDto empresa);
+    
+    EmpresaDto getEmpresaById(Long empresaId);
+    
+    List <EmpresaDto> getAllEmpresas();
     
 }

@@ -7,6 +7,9 @@ package service.impl;
 import Mapper.EmpresaMapper;
 import dto.EmpresaDto;
 import entity.Empresa;
+import exception.ResourceNotFoundException;
+import java.util.List;
+import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import repository.EmpresaRepository;
@@ -34,5 +37,24 @@ public class EmpresaServiceImpl implements EmpresaService{
         
     
 }
+
+    @Override
+    public EmpresaDto getEmpresaById(Long empresaId) {
+      Empresa empresa =  empresaRepository.findById(empresaId).orElseThrow(() -> new ResourceNotFoundException("Empresa no encontrada con Id :"+empresaId));
+        
+     return EmpresaMapper.mapToEmpresaDto(empresa);
+    }
+
+    @Override
+    public List<EmpresaDto> getAllEmpresas() {
+       List<Empresa> listaEmpresas = empresaRepository.findAll();
+       return listaEmpresas.stream().map((Empresa)->EmpresaMapper.mapToEmpresaDto(Empresa)).collect(Collectors.toList());
+       
+       
+       
+        
+    }
+    
+    
     
 }
