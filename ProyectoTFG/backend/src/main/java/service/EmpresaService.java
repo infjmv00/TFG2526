@@ -23,4 +23,6 @@ public interface EmpresaService {
     
     boolean isCifValido(String cif);
     
+    boolean esCorreoElectronico(String correo); 
+    
 }

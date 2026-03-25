@@ -30,7 +30,7 @@ public class Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name="CIF_Empresa")
-    private String CifEmpresa;
+    private String cifEmpresa;
      @Column (name="nombre_empresa")
     private String nombre_empresa;
      @Column (name="direccion_empresa")
@@ -51,11 +51,11 @@ public class Empresa {
     }
 
     public String getCifEmpresa() {
-        return CifEmpresa;
+        return cifEmpresa;
     }
 
     public void setCifEmpresa(String CifEmpresa) {
-        this.CifEmpresa = CifEmpresa;
+        this.cifEmpresa = CifEmpresa;
     }
 
     public String getNombre_empresa() {
@@ -103,7 +103,7 @@ public class Empresa {
     }
     public Empresa (String CifEmpresa,String nombre_empresa,String direccion_empresa,Integer telefono_empresa,String correoElectronico,boolean esAactivo){
         
-        this.CifEmpresa = CifEmpresa;
+        this.cifEmpresa = CifEmpresa;
         this.nombre_empresa= nombre_empresa;
         this.direccion_empresa = direccion_empresa;
         this.telefono_empresa = telefono_empresa;

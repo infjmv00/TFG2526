@@ -15,5 +15,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EmpresaRepository extends JpaRepository<Empresa, Long> {
     
+    boolean existsByCifEmpresa(String cifEmpresa);
+    boolean existsByCorreoElectronico(String correo);
+    
     
 }

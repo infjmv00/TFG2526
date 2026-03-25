@@ -31,12 +31,23 @@ public class EmpresaServiceImpl implements EmpresaService{
     @Override
     public EmpresaDto createEmpresa(EmpresaDto empresaDto) {
         
+        // comprobar que el correo electronico es valido
+        
+        if (esCorreoElectronico(empresaDto.getCorreoElectronico()) == false){
+            throw new ResourceNotFoundException("El correo electronico proporcionado no es válido: " + empresaDto.getCorreoElectronico());
+        }
+         if (empresaRepository.existsByCorreoElectronico(empresaDto.getCorreoElectronico())) {
+            throw new ResourceNotFoundException("Ya existe una empresa registrada con el email: " + empresaDto.getCorreoElectronico());
+        }
         
         // 1. Validar el CIF antes de hacer nada más
     if (!isCifValido(empresaDto.getCifEmpresa())) {
         // Lanzamos una excepción (puedes usar ResourceNotFound o una personalizada)
         throw new ResourceNotFoundException("El CIF proporcionado no es válido: " + empresaDto.getCifEmpresa());
     }
+    if (empresaRepository.existsByCifEmpresa(empresaDto.getCifEmpresa())) {
+            throw new ResourceNotFoundException("Ya existe una empresa registrada con el CIF: " + empresaDto.getCifEmpresa());
+        }
         // si es valido guardamos la empresa. 
         Empresa empresa = EmpresaMapper.mapToEmpresa(empresaDto);
         Empresa empresaGuardada = empresaRepository.save(empresa);
@@ -70,7 +81,7 @@ public boolean isCifValido(String cif) {
     if (cif == null) {
         return false;
     }
-
+  
     // 2. EXPRESIÓN REGULAR: Comprobamos formato y longitud (9 caracteres)
     String patronCif = "^[ABCDEFGHJNPQRSUVW][0-9]{7}[A-Z0-9]$";
     Pattern patron = Pattern.compile(patronCif);
@@ -111,7 +122,17 @@ public boolean isCifValido(String cif) {
         return lastChar == Character.forDigit(controlDigit, 10)
                 || lastChar == controlChar;
     }
+
+    @Override
+    public boolean esCorreoElectronico(String correoElectronico) {
+        
+        String correo = "[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}";
+		Pattern patron = Pattern.compile(correo);
+		Matcher cumple =patron.matcher(correoElectronico);
+		return cumple.matches();
     
     
+    
+    }
     
 }
