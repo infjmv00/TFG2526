@@ -16,6 +16,7 @@ public class EmpresaMapper {
         
         return new EmpresaDto(
                 
+                empresa.getId(),
                 empresa.getCifEmpresa(),
                 empresa.getNombre_empresa(),
                 empresa.getDireccion_empresa(),
@@ -29,6 +30,7 @@ public class EmpresaMapper {
         
         return new Empresa(
                 
+                //empresaDto.getId(),
                 empresaDto.getCifEmpresa(),
                 empresaDto.getNombre_empresa(),
                 empresaDto.getDireccion_empresa(),

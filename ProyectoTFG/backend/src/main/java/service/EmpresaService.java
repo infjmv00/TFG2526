@@ -21,4 +21,6 @@ public interface EmpresaService {
     
     List <EmpresaDto> getAllEmpresas();
     
+    boolean isCifValido(String cif);
+    
 }

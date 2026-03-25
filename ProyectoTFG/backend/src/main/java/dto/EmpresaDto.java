@@ -26,8 +26,9 @@ public class EmpresaDto {
     public EmpresaDto(){
         
     }
-    public EmpresaDto (String CifEmpresa,String nombre_empresa,String direccion_empresa,Integer telefono_empresa,String correoElectronico, boolean esActivo){
+    public EmpresaDto (Long id,String CifEmpresa,String nombre_empresa,String direccion_empresa,Integer telefono_empresa,String correoElectronico, boolean esActivo){
         
+        this.id = id;
         this.CifEmpresa = CifEmpresa;
         this.nombre_empresa= nombre_empresa;
         this.direccion_empresa = direccion_empresa;
