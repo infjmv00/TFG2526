@@ -15,7 +15,7 @@ package dto;
 
 public class EmpresaDto {
     private Long id;
-    private String CifEmpresa;
+    private String cifEmpresa;
     private String nombre_empresa;
     private String direccion_empresa;
     private Integer telefono_empresa;
@@ -29,7 +29,7 @@ public class EmpresaDto {
     public EmpresaDto (Long id,String CifEmpresa,String nombre_empresa,String direccion_empresa,Integer telefono_empresa,String correoElectronico, boolean esActivo){
         
         this.id = id;
-        this.CifEmpresa = CifEmpresa;
+        this.cifEmpresa = CifEmpresa;
         this.nombre_empresa= nombre_empresa;
         this.direccion_empresa = direccion_empresa;
         this.telefono_empresa = telefono_empresa;
@@ -49,11 +49,11 @@ public class EmpresaDto {
     }
 
     public String getCifEmpresa() {
-        return CifEmpresa;
+        return cifEmpresa;
     }
 
     public void setCifEmpresa(String CifEmpresa) {
-        this.CifEmpresa = CifEmpresa;
+        this.cifEmpresa = CifEmpresa;
     }
 
     public String getNombre_empresa() {
